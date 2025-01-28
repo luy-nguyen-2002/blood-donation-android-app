@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/accent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VolunteerListActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/accent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/backToMenuTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/accent"
+                android:background="@color/main"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="Back To Menu" />
+
+            <TextView
+                android:id="@+id/logoutTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/accent"
+                android:background="@color/main"
+                android:textStyle="bold"
+                android:gravity="end"
+                android:padding="10dp"
+                android:text="Logout" />
+        </LinearLayout>
+        <TextView
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volunteer List"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp" />
+        <ListView
+            android:id="@+id/listOfVolunteers"
+            android:background="@color/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

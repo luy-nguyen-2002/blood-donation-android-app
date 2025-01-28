@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/accent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/logoutTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/accent"
+            android:background="@color/main"
+            android:gravity="end"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:text="Log out" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/superUserMenu"
+        android:orientation="vertical"
+        android:background="@color/accent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="50dp">
+        <TextView
+            android:id="@+id/viewAllDonationSites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View All Donation Sites on Map"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp" />
+        <TextView
+            android:id="@+id/manageReports"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Manage Reports"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/managerMenu"
+        android:orientation="vertical"
+        android:background="@color/accent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="50dp">
+        <TextView
+            android:id="@+id/createDonationSite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Donation Site"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp" />
+        <TextView
+            android:id="@+id/viewDonationSites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View All Donation Sites"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp" />
+        <TextView
+            android:id="@+id/viewRegisteredDonors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Registered Donors"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp" />
+        <TextView
+            android:id="@+id/viewVolunteers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Registered Volunteers"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp" />
+        <TextView
+            android:id="@+id/viewReports"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Reports"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/donorMenu"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@color/accent"
+        android:layout_height="match_parent"
+        android:layout_margin="50dp">
+        <TextView
+            android:id="@+id/registerForDonation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register Donation Sites on Map"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp" />
+        <TextView
+            android:id="@+id/viewRegisteredDonationSites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Your Registered Donation Sites on Map"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

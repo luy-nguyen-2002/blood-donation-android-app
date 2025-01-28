@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/accent"
+    tools:context=".CreateDonationSiteActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/backToMenuTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/accent"
+                android:background="@color/main"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="Back To Menu" />
+
+            <TextView
+                android:id="@+id/logoutTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/accent"
+                android:background="@color/main"
+                android:textStyle="bold"
+                android:gravity="end"
+                android:padding="10dp"
+                android:text="Logout" />
+        </LinearLayout>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+        <EditText
+            android:id="@+id/site_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/map"
+            android:layout_margin="8dp"
+            android:background="@color/main"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:padding="5dp"
+            android:hint="Donation Site Name" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/site_name"
+                android:layout_margin="8dp"
+                android:background="@color/main"
+                android:textColor="@color/accent"
+                android:textColorHint="@color/accent"
+                android:padding="5dp"
+                android:hint="Address" />
+
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/get_position_on_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/secondary"
+                android:textColor="@color/accent"
+                android:text="Locate" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/opening_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/address"
+            android:background="@color/main"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:padding="5dp"
+            android:layout_margin="8dp"
+            android:hint="Opening Time (e.g., 9:00)" />
+
+        <EditText
+            android:id="@+id/closing_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/opening_time"
+            android:background="@color/main"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:padding="5dp"
+            android:layout_margin="8dp"
+            android:hint="Closing Time (e.g., 18:00)" />
+
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/secondary"
+            android:textColor="@color/accent"
+            android:text="Create" />
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

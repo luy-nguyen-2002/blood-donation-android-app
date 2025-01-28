@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/accent"
+    tools:context=".RegisteredDonorListActivity">
+
+    <ScrollView
+        android:id="@+id/listViewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main"
+        android:fillViewport="true">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/backToMenuTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/accent"
+                android:background="@color/main"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="Back To Menu" />
+
+            <TextView
+                android:id="@+id/logoutTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/accent"
+                android:background="@color/main"
+                android:textStyle="bold"
+                android:gravity="end"
+                android:padding="10dp"
+                android:text="Logout" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <Button
+                android:id="@+id/downloadButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/accent"
+                android:textColor="@color/main"
+                android:text="Download Donor list"/>
+        </LinearLayout>
+        <ListView
+            android:id="@+id/listOfRegisterDonors"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"/>
+    </LinearLayout>
+    </ScrollView>
+    <ScrollView
+        android:id="@+id/itemRegisteredDonorDetails"
+        android:background="@color/accent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/formHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Details Registration Form"
+            android:textColor="@color/main"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Registered Donor Id:"
+            android:textColor="@color/main"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/registerId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/formHeading"
+            android:layout_margin="8dp"
+            android:background="@color/main"
+            android:padding="5dp"
+            android:text="Register ID"
+            android:textColor="@color/accent"
+            android:textSize="16dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Registered Donor Username:"
+            android:textColor="@color/main"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/registerUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/registerId"
+            android:layout_margin="8dp"
+            android:background="@color/main"
+            android:padding="5dp"
+            android:text="Register Username"
+            android:textColor="@color/accent"
+            android:textSize="16dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Registered Donor Email:"
+            android:textColor="@color/main"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/registerEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/registerUsername"
+            android:layout_margin="8dp"
+            android:background="@color/main"
+            android:padding="5dp"
+            android:text="Register Email"
+            android:textColor="@color/accent"
+            android:textSize="16dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Donation Site Name:"
+            android:textColor="@color/main"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/donationSiteName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/registerEmail"
+            android:layout_margin="8dp"
+            android:background="@color/main"
+            android:padding="5dp"
+            android:text="Donation Site Name"
+            android:textColor="@color/accent"
+            android:textSize="16dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Donation Site Address:"
+            android:textColor="@color/main"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/siteAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/donationSiteName"
+            android:layout_margin="8dp"
+            android:background="@color/main"
+            android:padding="5dp"
+            android:text="Donation Site Address"
+            android:textColor="@color/accent"
+            android:textSize="16dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Registration Form Id:"
+            android:textColor="@color/main"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/registrationId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/siteAddress"
+            android:layout_margin="8dp"
+            android:background="@color/main"
+            android:padding="5dp"
+            android:text="Donation Registration Id"
+            android:textColor="@color/accent"
+            android:textSize="16dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Number Of Donors (allowed to Edit):"
+            android:textColor="@color/main"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/numberOfDonors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/registrationId"
+            android:layout_margin="8dp"
+            android:background="@color/main"
+            android:padding="5dp"
+            android:text="Number of Donors"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="16dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Confirm Status Of Registration Form:"
+            android:textColor="@color/main"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/isConfirmedStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/numberOfDonors"
+            android:layout_margin="8dp"
+            android:background="@color/main"
+            android:padding="5dp"
+            android:text="Confirm Status"
+            android:textColor="@color/accent"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/secondary"
+                android:text="Cancel"
+                android:textColor="@color/accent" />
+
+            <Button
+                android:id="@+id/confirmStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/secondary"
+                android:text="Confirm"
+                android:textColor="@color/accent" />
+
+            <Button
+                android:id="@+id/updateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/secondary"
+                android:text="Update"
+                android:textColor="@color/accent" />
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

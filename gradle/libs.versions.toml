@@ -1,0 +1,44 @@
+[versions]
+agp = "8.7.1"
+bcrypt = "0.10.2"
+gson = "2.10.1"
+guava = "23.0"
+guavaVersion = "30.0-jre"
+itext7Core = "7.2.5"
+javaUuidGenerator = "4.2.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+okhttp = "4.9.3"
+playServicesLocation = "21.0.1"
+playServicesMaps = "19.0.0"
+activity = "1.9.3"
+constraintlayout = "2.2.0"
+googleAndroidLibrariesMapsplatformSecretsGradlePlugin = "2.0.1"
+compilercommon = "3.2.0-alpha11"
+
+[libraries]
+bcrypt = { module = "at.favre.lib:bcrypt", version.ref = "bcrypt" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+guava = { module = "com.google.guava:guava", version.ref = "guava" }
+guava-v300jre = { module = "com.google.guava:guava", version.ref = "guavaVersion" }
+itext7-core = { module = "com.itextpdf:itext7-core", version.ref = "itext7Core" }
+java-uuid-generator = { module = "com.fasterxml.uuid:java-uuid-generator", version.ref = "javaUuidGenerator" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
+play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+compilercommon = { group = "androidx.databinding", name = "compilerCommon", version.ref = "compilercommon" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+google-android-libraries-mapsplatform-secrets-gradle-plugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "googleAndroidLibrariesMapsplatformSecretsGradlePlugin" }
+

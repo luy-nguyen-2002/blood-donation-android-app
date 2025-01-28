@@ -1,0 +1,280 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/accent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewDonationSiteActivity">
+
+    <ScrollView
+        android:id="@+id/donationSitesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/backToMenuTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/main"
+                    android:padding="10dp"
+                    android:text="Back To Menu"
+                    android:textColor="@color/accent"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/logoutTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/main"
+                    android:gravity="end"
+                    android:padding="10dp"
+                    android:text="Logout"
+                    android:textColor="@color/accent"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:layout_alignParentTop="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Donation Site Id:"
+                    android:textColor="@color/main"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/site_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/map"
+                    android:layout_margin="8dp"
+                    android:background="@color/main"
+                    android:padding="5dp"
+                    android:text="Donation Site Id"
+                    android:textColor="@color/accent"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Donation Site Name:"
+                    android:textColor="@color/main"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/site_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/site_id"
+                    android:layout_margin="8dp"
+                    android:background="@color/main"
+                    android:padding="5dp"
+                    android:text="Donation Site Name"
+                    android:textColor="@color/accent"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Donation Site Address:"
+                    android:textColor="@color/main"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/site_name"
+                        android:layout_marginStart="8dp"
+                        android:background="@color/main"
+                        android:padding="5dp"
+                        android:text="Address"
+                        android:textColor="@color/accent" />
+
+                    <Button
+                        android:id="@+id/findRouteButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:backgroundTint="@color/secondary"
+                        android:text="Find Route" />
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Donation Site Opening Time:"
+                    android:textColor="@color/main"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/opening_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/address"
+                    android:layout_margin="8dp"
+                    android:background="@color/main"
+                    android:padding="5dp"
+                    android:text="Opening Time"
+                    android:textColor="@color/accent" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Donation Site Closing Time:"
+                    android:textColor="@color/main"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/closing_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/opening_time"
+                    android:layout_margin="8dp"
+                    android:background="@color/main"
+                    android:padding="5dp"
+                    android:text="Closing Time"
+                    android:textColor="@color/accent" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Donation Site Manager Id:"
+                    android:textColor="@color/main"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/manager_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/closing_time"
+                    android:layout_margin="8dp"
+                    android:background="@color/main"
+                    android:padding="5dp"
+                    android:text="Manager ID"
+                    android:textColor="@color/accent" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Donation Site Manager Username:"
+                    android:textColor="@color/main"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/manager_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/manager_id"
+                    android:layout_margin="8dp"
+                    android:background="@color/main"
+                    android:padding="5dp"
+                    android:text="Manager Name"
+                    android:textColor="@color/accent" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Donation Site Manager Email:"
+                    android:textColor="@color/main"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/manager_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/manager_username"
+                    android:layout_margin="8dp"
+                    android:background="@color/main"
+                    android:padding="5dp"
+                    android:text="Manager Email"
+                    android:textColor="@color/accent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/editDonationSiteLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/donationSitesLayout"
+                android:background="@color/accent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/editDonationSite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/secondary"
+                    android:text="edit this map" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/registerDonationLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/donationSitesLayout"
+                android:background="@color/accent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/registerDonationButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/secondary"
+                    android:text="Register for Donation" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/registerVolunteerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/donationSitesLayout"
+                android:background="@color/accent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/registerVolunteerButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/secondary"
+                    android:text="Register Volunteer" />
+
+                <Button
+                    android:id="@+id/stopVolunteeringButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/secondary"
+                    android:text="Stop Volunteering" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

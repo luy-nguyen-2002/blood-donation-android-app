@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/accent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReportsActivity">
+
+    <LinearLayout
+        android:id="@+id/listViewReportsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/backToMenuTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/accent"
+                android:background="@color/main"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="Back To Menu" />
+
+            <TextView
+                android:id="@+id/logoutTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/accent"
+                android:background="@color/main"
+                android:textStyle="bold"
+                android:gravity="end"
+                android:padding="10dp"
+                android:text="Logout" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/searchAndFilterLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- Search Bar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/searchBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/main"
+                    android:background="@android:drawable/edit_text"
+                    android:hint="Search Blood Type"
+                    android:textColorHint="@color/secondary"
+                    android:padding="8dp"
+                    android:textSize="14dp" />
+
+                <Button
+                    android:id="@+id/searchButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/accent"
+                    android:layout_marginLeft="8dp"
+                    android:backgroundTint="@color/secondary"
+                    android:textColor="@color/accent"
+                    android:text="Search"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Filter Options -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <!-- Opening Time Filter -->
+                <TextView
+                    android:id="@+id/openingTimeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/secondary"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="8dp"
+                    android:text="Opening Time:"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/openingTimeSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/secondary"
+                    android:entries="@array/time_options" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+                <!-- Closing Time Filter -->
+                <TextView
+                    android:id="@+id/closingTimeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/secondary"
+                    android:layout_marginRight="8dp"
+                    android:text="Closing Time:"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/closingTimeSpinner"
+                    android:background="@color/secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/time_options" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/reportOutcomeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/accent"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Report Outcomes"
+                android:textColor="@color/main"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="8dp"
+                    android:text="Total Valid Reports: "
+                    android:textColor="@color/main"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/totalOfValidReports"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="8dp"
+                    android:text="Null"
+                    android:textColor="@color/main"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="8dp"
+                    android:text="Total Of Donors: "
+                    android:textColor="@color/main"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/totalOfValidDonors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="8dp"
+                    android:text="Null"
+                    android:textColor="@color/main"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="8dp"
+                    android:text="Blood Types: "
+                    android:textColor="@color/main"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/totalOfBloodTypes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="8dp"
+                    android:text="Null"
+                    android:textColor="@color/main"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="8dp"
+                    android:text="Total Amount of Blood: "
+                    android:textColor="@color/main"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/totalAmountOfBlood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="8dp"
+                    android:text="Null"
+                    android:textColor="@color/main"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/downloadButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/secondary"
+                android:textColor="@color/white"
+                android:text="Download"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/newReportButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/secondary"
+                android:textColor="@color/white"
+                android:text="New Report"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/secondary"
+            android:fillViewport="true">
+
+            <ListView
+                android:id="@+id/listViewReports"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </ScrollView>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/reportDetailsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/accent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/reportDetailsHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Report Details"
+                android:textColor="@color/main"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Report Id:"
+                android:textColor="@color/main"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/reportId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/reportDetailsHeading"
+                android:layout_margin="8dp"
+                android:background="@color/main"
+                android:padding="5dp"
+                android:text="Report Id"
+                android:textColor="@color/accent"
+                android:textSize="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Register Donor Username:"
+                android:textColor="@color/main"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/registerUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/reportId"
+                android:layout_margin="8dp"
+                android:background="@color/main"
+                android:padding="5dp"
+                android:text="Register Username"
+                android:textColor="@color/accent"
+                android:textSize="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Register Donor Email:"
+                android:textColor="@color/main"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/registerEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/registerUsername"
+                android:layout_margin="8dp"
+                android:background="@color/main"
+                android:padding="5dp"
+                android:text="Register Email"
+                android:textColor="@color/accent"
+                android:textSize="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Donation Site Name:"
+                android:textColor="@color/main"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/siteName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/registerEmail"
+                android:layout_margin="8dp"
+                android:background="@color/main"
+                android:padding="5dp"
+                android:text="Site Name"
+                android:textColor="@color/accent"
+                android:textSize="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Address:"
+                android:textColor="@color/main"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/siteAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/siteName"
+                android:layout_margin="8dp"
+                android:background="@color/main"
+                android:padding="5dp"
+                android:text="Site Address"
+                android:textColor="@color/accent"
+                android:textSize="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Donation Site Opening :"
+                android:textColor="@color/main"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/siteOpeningTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/siteAddress"
+                android:layout_margin="8dp"
+                android:background="@color/main"
+                android:padding="5dp"
+                android:text="Site Opening Time"
+                android:textColor="@color/accent"
+                android:textSize="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Donation Site Closing Time:"
+                android:textColor="@color/main"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/siteClosingTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/siteOpeningTime"
+                android:layout_margin="8dp"
+                android:background="@color/main"
+                android:padding="5dp"
+                android:text="Site Closing Time"
+                android:textColor="@color/accent"
+                android:textSize="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Full Name Of Donor (allowed to Edit):"
+                android:textColor="@color/main"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/fullNameOfDonor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/siteClosingTime"
+                android:layout_margin="8dp"
+                android:background="@color/main"
+                android:hint="Full Name Of Donor"
+                android:padding="5dp"
+                android:textColor="@color/accent"
+                android:textColorHint="@color/accent"
+                android:textSize="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Type Of Blood (allowed to Edit):"
+                android:textColor="@color/main"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/bloodType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fullNameOfDonor"
+                android:layout_margin="8dp"
+                android:background="@color/main"
+                android:hint="Blood Type"
+                android:padding="5dp"
+                android:textColor="@color/accent"
+                android:textColorHint="@color/accent"
+                android:textSize="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Amount Of Blood in ml (allowed to Edit):"
+                android:textColor="@color/main"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/amountOfBlood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bloodType"
+                android:layout_margin="8dp"
+                android:background="@color/main"
+                android:hint="Amount Blood"
+                android:padding="5dp"
+                android:textColor="@color/accent"
+                android:textColorHint="@color/accent"
+                android:textSize="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Date Of Blood Donation (allowed to Edit):"
+                android:textColor="@color/main"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/dateOfDonation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/amountOfBlood"
+                android:layout_margin="8dp"
+                android:background="@color/main"
+                android:hint="Date Of Donation"
+                android:padding="5dp"
+                android:textColor="@color/accent"
+                android:textColorHint="@color/accent"
+                android:textSize="16dp" />
+
+            <LinearLayout
+                android:id="@+id/buttonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/accent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancelButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/secondary"
+                    android:text="Cancel"
+                    android:textColor="@color/accent" />
+
+                <Button
+                    android:id="@+id/removeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/secondary"
+                    android:text="Remove"
+                    android:textColor="@color/accent" />
+
+                <Button
+                    android:id="@+id/updateButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/secondary"
+                    android:text="Update"
+                    android:textColor="@color/accent" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/addNewReportLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/accent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/addReportHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Add New Report"
+            android:textColor="@color/main"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/registerUsernameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addReportHeading"
+            android:layout_margin="8dp"
+            android:background="@color/main"
+            android:hint="Register Username Input"
+            android:padding="5dp"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/siteIdInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/registerUsernameInput"
+            android:layout_margin="8dp"
+            android:background="@color/main"
+            android:hint="Site Id Input"
+            android:padding="5dp"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/fullNameOfDonorInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/siteIdInput"
+            android:layout_margin="8dp"
+            android:background="@color/main"
+            android:hint="Full Name Of Donor Input"
+            android:padding="5dp"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/bloodTypeInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fullNameOfDonorInput"
+            android:layout_margin="8dp"
+            android:background="@color/main"
+            android:hint="Blood Type"
+            android:padding="5dp"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/amountOfBloodInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bloodTypeInput"
+            android:layout_margin="8dp"
+            android:background="@color/main"
+            android:hint="Amount Blood Input"
+            android:padding="5dp"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/dateOfDonationInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/amountOfBloodInput"
+            android:layout_margin="8dp"
+            android:background="@color/main"
+            android:hint="Date Of Donation Input"
+            android:padding="5dp"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/secondary"
+            android:text="Add"
+            android:textColor="@color/accent" />
+
+        <Button
+            android:id="@+id/cancelAddButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/secondary"
+            android:text="Cancel"
+            android:textColor="@color/accent" />
+    </LinearLayout>
+
+
+</RelativeLayout>

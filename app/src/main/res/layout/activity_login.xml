@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@color/accent"
+    tools:context=".LoginActivity">
+
+  <ImageView
+      android:id="@+id/logo"
+      android:layout_width="150dp"
+      android:layout_height="150dp"
+      android:layout_gravity="center"
+      android:src="@mipmap/ic_launcher_round"
+      android:contentDescription="app_logo"
+      android:layout_marginBottom="20dp" />
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Welcome to Blood Donation (BD)"
+      android:textSize="24sp"
+      android:textStyle="bold"
+      android:textColor="@color/main"
+      android:gravity="center"
+      android:layout_gravity="center"
+      android:layout_marginBottom="20dp" />
+
+  <EditText
+      android:id="@+id/usernameInput"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Username"
+      android:textColor="@color/accent"
+      android:inputType="textEmailAddress"
+      android:padding="10dp"
+      android:textColorHint="@color/accent"
+      android:background="@color/main"
+      android:layout_marginBottom="10dp" />
+
+  <EditText
+      android:id="@+id/passwordInput"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="password@123"
+      android:textColorHint="@color/accent"
+      android:inputType="textPassword"
+      android:padding="10dp"
+      android:textColor="@color/accent"
+      android:background="@color/main"
+      android:layout_marginBottom="20dp" />
+
+  <TextView
+      android:id="@+id/loginFailed"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Please check your username and password again"
+      android:textColor="@color/secondary"
+      android:padding="10dp"
+      android:layout_marginBottom="20dp"
+      android:visibility="invisible"
+      android:gravity="center"/>
+
+  <Button
+      android:id="@+id/loginButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="login"
+      android:textStyle="bold"
+      android:backgroundTint="@color/secondary"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:layout_marginBottom="10dp" />
+
+  <TextView
+      android:id="@+id/signUpText"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Don’t have an account? Sign up"
+      android:textColor="@color/secondary"
+      android:gravity="center"
+      android:layout_gravity="center" />
+</androidx.appcompat.widget.LinearLayoutCompat>
