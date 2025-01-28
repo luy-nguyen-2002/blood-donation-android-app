@@ -71,7 +71,7 @@ public class ViewDonationSiteActivity extends FragmentActivity implements OnMapR
     private TextView managerIdTextView;
     private TextView siteIdTextView,backToMenuTextView,logoutTextView;
     private Button registerVolunteerButton,registerDonationButton,findRouteButton,stopVolunteeringButton,editDonationSite;
-    private static final String apiKey = "AIzaSyCZXhgcfB4A3Nw0eqaQuy9M7bEeeaLmThI";
+    private static final String apiKey = "googleapikey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
